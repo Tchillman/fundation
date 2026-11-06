@@ -1,0 +1,10 @@
+{
+  "description": "A Associação Osãi website shares its mental health projects, services, events, and ways to get involved, helping visitors access support and connect with the organization.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

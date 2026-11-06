@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600;700&family=Roboto:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+@theme {
+  --color-osai-wine: #540101;
+  --color-osai-wine-overlay: #420000;
+  --color-osai-orange: #f18a42;
+  --color-osai-gold: #ffb606;
+  --color-osai-gold-dark: #e6a303;
+  --color-osai-ink: #333333;
+  --color-osai-body: #606060;
+  --color-osai-muted: #bfbfbf;
+  --color-osai-line: #eeeeee;
+  --color-osai-copyright: #2c2c2c;
+  --color-osai-donate: #2f8f46;
+  --color-osai-member: #2374ab;
+  --color-osai-cream: #faf7f2;
+  --font-sans: "Roboto", Arial, sans-serif;
+  --font-display: "Roboto Slab", Georgia, serif;
+  --container-site: 1170px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    color: var(--color-osai-body);
+    background: white;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  a {
+    transition: color 180ms ease, background-color 180ms ease;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-osai-gold);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .site-container {
+    width: min(100% - 40px, 1170px);
+    margin-inline: auto;
+  }
+
+  .hero-background {
+    background:
+      linear-gradient(rgb(66 0 0 / 51%), rgb(66 0 0 / 51%)),
+      url("/images/hero.jpg") top center / cover no-repeat;
+  }
+
+  .soft-grid {
+    background-image:
+      linear-gradient(rgb(84 1 1 / 4%) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(84 1 1 / 4%) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
