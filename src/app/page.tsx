@@ -163,7 +163,6 @@ export default function HomePage() {
                 className="object-cover"
                 fill
                 priority
-                unoptimized
                 sizes="(max-width: 1024px) 100vw, 48vw"
                 src="/images/hero.jpg"
               />
