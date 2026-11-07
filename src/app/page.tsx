@@ -93,6 +93,7 @@ const updates = [
     description:
       "Resultados das acções, indicadores de impacto e aplicação dos apoios recebidos.",
     image: "/images/angariacao.jpg",
+    alt: "Angariação de recursos e relatórios da Associação Osãi",
     status: "Documentos em actualização",
   },
   {
@@ -101,6 +102,7 @@ const updates = [
     description:
       "Assistência psicossocial e actividades ludo-educativas junto de comunidades vulneráveis.",
     image: "/images/ukamba.jpg",
+    alt: "Actividades comunitárias do Projecto Ukamba",
     status: "Conheça a iniciativa",
   },
   {
@@ -109,6 +111,7 @@ const updates = [
     description:
       "Informação clara para reconhecer sinais de stress, ansiedade e depressão.",
     image: "/images/agentes.jpg",
+    alt: "Agentes comunitários de saúde mental",
     status: "Conteúdo educativo",
   },
 ] as const;
@@ -144,7 +147,7 @@ export default function HomePage() {
                 </p>
                 <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                   <Link
-                    className="rounded-full text-osai-orange px-7 py-3.5 text-center text-sm font-bold uppercase text-white hover:border-white hover:bg-white hover:text-osai-wine"
+                    className="rounded-full border border-osai-orange bg-osai-orange px-7 py-3.5 text-center text-sm font-bold uppercase text-white hover:border-white hover:bg-white hover:text-osai-wine"
                     href="/doacoes">
                     Fazer uma doação
                   </Link>
@@ -157,7 +160,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative min-h-115 overflow-hidden lg:min-h-full">
+            <div className="relative aspect-4/3 w-full overflow-hidden lg:aspect-auto lg:h-full lg:min-h-full">
               <Image
                 alt="Apoio comunitário da Associação Osãi"
                 className="object-cover"
@@ -195,7 +198,6 @@ export default function HomePage() {
                   />
                 </p>
                 <h2 className="mt-1 font-bold text-osai-ink">{stat.label}</h2>
-                
               </article>
             ))}
           </div>
@@ -208,11 +210,11 @@ export default function HomePage() {
           className="soft-grid bg-osai-cream py-24"
           id="sobre">
           <div className="site-container grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="relative">
+            <div className="relative aspect-4/5 w-full">
               <div className="absolute -left-5 -top-5 size-28 rounded-full bg-osai-gold/25" />
               <Image
                 alt="Sofiana Lua Pindali Mbakassy, fundadora da Associação Osãi"
-                className="relative aspect-4/5 w-full rounded-4xl object-cover shadow-[0_24px_60px_rgb(84_1_1/0.15)]"
+                className="relative h-full w-full rounded-4xl object-cover shadow-[0_24px_60px_rgb(84_1_1/0.15)]"
                 height={900}
                 src="/images/sofiana.jpg"
                 width={720}
@@ -294,7 +296,7 @@ export default function HomePage() {
                   }`}
                   id={project.id}
                   key={project.title}>
-                  <div className="relative aspect-4/3 overflow-hidden">
+                  <div className="relative aspect-4/3 w-full overflow-hidden">
                     <Image
                       alt={project.alt}
                       className="object-cover transition duration-500 group-hover:scale-105"
@@ -411,14 +413,14 @@ export default function HomePage() {
                   }`}
                   key={update.title}>
                   <div
-                    className={`relative overflow-hidden ${
+                    className={`relative w-full overflow-hidden ${
                       index === 0 ? "aspect-2/1" : "aspect-square"
                     }`}>
                     <Image
-                      alt=""
+                      alt={update.alt}
                       className="object-cover transition duration-500 group-hover:scale-105"
                       fill
-                      sizes={index === 0 ? "66vw" : "33vw"}
+                      sizes={index === 0 ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
                       src={update.image}
                     />
                     <span className="absolute left-5 top-5 rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-osai-wine shadow-lg">
