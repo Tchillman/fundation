@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
-const figmaPublicUrl = process.env.FIGMA_PUBLIC_URL
-let figmaDevHostname
+const figmaPublicUrl = process.env.FIGMA_PUBLIC_URL;
+let figmaDevHostname;
 
 if (process.env.FIGMA && figmaPublicUrl) {
   try {
-    figmaDevHostname = new URL(figmaPublicUrl).hostname
+    figmaDevHostname = new URL(figmaPublicUrl).hostname;
   } catch {
     // Ignore malformed host metadata rather than weakening origin checks.
   }
@@ -16,7 +16,9 @@ const nextConfig = {
         allowedDevOrigins: [figmaDevHostname],
       }
     : {}),
-  
-}
+  images: {
+    unoptimized: true,
+  },
+};
 
-export default nextConfig
+module.exports = nextConfig;
